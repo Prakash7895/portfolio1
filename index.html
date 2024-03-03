@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="portfolio">
+      <div class="room">
+        <div class="walls left"></div>
+        <div class="walls right"></div>
+        <div class="walls top"></div>
+        <div class="walls bottom"></div>
+        <div class="walls back"></div>
+      </div>
+    </div>
+    <!-- <p class="dimension">
+      <span class="width"></span>
+      <span class="height"></span>
+    </p> -->
+  </body>
+  <script>
+    const widthEle = document.getElementsByClassName('width')[0];
+    const heightEle = document.getElementsByClassName('height')[0];
+
+    widthEle.textContent = `Width: ${window.innerWidth}px,  Half: ${
+      window.innerWidth / 2
+    }px`;
+    heightEle.textContent = `Height: ${window.innerHeight}px,  Half: ${
+      window.innerHeight / 2
+    }px`;
+
+    window.addEventListener('resize', function () {
+      widthEle.textContent = `Width: ${window.innerWidth}px`;
+      heightEle.textContent = `Height: ${window.innerHeight}px`;
+    });
+  </script>
+</html>
