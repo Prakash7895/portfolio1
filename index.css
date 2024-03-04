@@ -2,6 +2,11 @@
   --roomHeight: 800px;
   --roomWidth: 1200px;
   --depth: 400px;
+  --card-height: 35vh;
+  --card-width: 40vw;
+  --card-clr1: #8296d8;
+  --card-clr2: #7d818e;
+  --card-clr3: #461cd0;
 }
 
 body {
@@ -9,6 +14,9 @@ body {
   height: 100vh;
   font-size: 50px;
   position: relative;
+  color: #555555;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .dimension {
@@ -82,4 +90,99 @@ body {
       #a0a0a0 0 90deg
     );
   background-size: 100% 100%, 2em 2em;
+}
+
+.textContainer {
+  display: inline-block;
+  width: 100%;
+  text-overflow: clip;
+  padding-left: 35px;
+}
+.myName {
+  font-size: 1.5em;
+  letter-spacing: 8px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 20px 0px;
+  animation: typing 2s ease-out;
+}
+
+.salutation {
+  font-size: 0.8em;
+}
+
+.description {
+  font-size: 0.6em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@property --rotate {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card {
+  margin-left: 20px;
+  margin-top: 40px;
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 0.7em;
+  color: var(--card-clr1);
+}
+
+.card::before,
+.card::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background-image: linear-gradient(
+    var(--rotate),
+    var(--card-clr1),
+    var(--card-clr2) 43%,
+    var(--card-clr3)
+  );
+  animation: spin 2.5s linear infinite;
+}
+
+.card::before {
+  width: 102%;
+  height: 102%;
+  border-radius: 8px;
+  top: -1%;
+  left: -1%;
+}
+
+.card::after {
+  /* top: calc(var(--card-height) / 10); */
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  /* transform: scale(0.8); */
+  /* filter: blur(calc(var(--card-height) / 15)); */
+  box-shadow: 0 0 0.7em var(--card-clr2);
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
 }

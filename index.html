@@ -13,47 +13,51 @@
         <div class="walls right"></div>
         <div class="walls top"></div>
         <div class="walls bottom"></div>
-        <div class="walls back"></div>
+        <div class="walls back">
+          <div class="card">
+            <div class="textContainer">
+              <p class="myName salutation">Hi, I am</p>
+              <p class="myName firstName">PRAKASH</p>
+              <p class="myName lastName">CHOUDHARY,</p>
+              <p class="myName description">Full Stack Developer,</p>
+              <p class="myName description">with 3+ years of experience.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- <p class="dimension"> -->
-    <!-- <span class="width"></span>
-      <span class="height"></span> -->
-    <!-- <button id="moveIn">In</button>
-      <button id="moveOut">Out</button> -->
-    <!-- </p> -->
   </body>
   <script>
-    const btnIn = document.getElementById('moveIn');
-    const btnOut = document.getElementById('moveOut');
+    // const btnIn = document.getElementById('moveIn');
+    // const btnOut = document.getElementById('moveOut');
 
-    const r = document.querySelector(':root');
-    var rs = getComputedStyle(r);
-    console.log('R', rs.getPropertyValue('--depth'));
+    // const r = document.querySelector(':root');
+    // var rs = getComputedStyle(r);
+    // console.log('R', rs.getPropertyValue('--depth'));
 
-    btnIn.addEventListener('click', () => {
-      const depth = +rs.getPropertyValue('--depth')?.match(/\d/g).join('');
-      r.style.setProperty('--depth', depth - 50 + 'px');
-    });
+    // // btnIn.addEventListener('click', () => {
+    // //   const depth = +rs.getPropertyValue('--depth')?.match(/\d/g).join('');
+    // //   r.style.setProperty('--depth', depth - 50 + 'px');
+    // // });
 
-    btnOut.addEventListener('click', () => {
-      const depth = +rs.getPropertyValue('--depth')?.match(/\d/g).join('');
-      r.style.setProperty('--depth', depth + 50 + 'px');
-    });
+    // // btnOut.addEventListener('click', () => {
+    // //   const depth = +rs.getPropertyValue('--depth')?.match(/\d/g).join('');
+    // //   r.style.setProperty('--depth', depth + 50 + 'px');
+    // // });
 
-    const widthEle = document.getElementsByClassName('width')[0];
-    const heightEle = document.getElementsByClassName('height')[0];
+    // const widthEle = document.getElementsByClassName('width')[0];
+    // const heightEle = document.getElementsByClassName('height')[0];
 
-    widthEle.textContent = `Width: ${window.innerWidth}px,  Half: ${
-      window.innerWidth / 2
-    }px`;
-    heightEle.textContent = `Height: ${window.innerHeight}px,  Half: ${
-      window.innerHeight / 2
-    }px`;
+    // widthEle.textContent = `Width: ${window.innerWidth}px,  Half: ${
+    //   window.innerWidth / 2
+    // }px`;
+    // heightEle.textContent = `Height: ${window.innerHeight}px,  Half: ${
+    //   window.innerHeight / 2
+    // }px`;
 
-    window.addEventListener('resize', function () {
-      widthEle.textContent = `Width: ${window.innerWidth}px`;
-      heightEle.textContent = `Height: ${window.innerHeight}px`;
-    });
+    // window.addEventListener('resize', function () {
+    //   widthEle.textContent = `Width: ${window.innerWidth}px`;
+    //   heightEle.textContent = `Height: ${window.innerHeight}px`;
+    // });
   </script>
 </html>
